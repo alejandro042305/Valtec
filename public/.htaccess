@@ -5,6 +5,12 @@ ErrorDocument 404 /404.html
 
 # Caché: los archivos de _astro llevan una huella en el nombre y nunca cambian.
 <IfModule mod_headers.c>
+  # Páginas: el CDN de Hostinger las guarda 1 día (s-maxage) y el navegador 5 minutos.
+  # Sin esto el CDN pregunta al servidor en cada visita y la página tarda varios segundos.
+  # Después de publicar una actualización: hPanel → Rendimiento → CDN → Purgar caché.
+  <FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "public, max-age=300, s-maxage=86400"
+  </FilesMatch>
   <FilesMatch "\.(css|js|avif|webp|jpg|jpeg|png|svg|woff2)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
