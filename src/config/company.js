@@ -9,7 +9,7 @@ export const company = {
    * Dominio definitivo, sin barra final. Se usa en canonical, sitemap, Open Graph y Schema.org.
    * La variable SITE_URL lo reemplaza al compilar (la usa la publicación en GitHub Pages).
    */
-  siteUrl: (process.env.SITE_URL || 'https://valtec.com').replace(/\/$/, ''),
+  siteUrl: (process.env.SITE_URL || 'https://valtecsas.com').replace(/\/$/, ''),
   tagline: 'Servicio técnico de electrodomésticos en Bogotá y alrededores',
   description:
     'Valtec es una empresa independiente especializada en diagnóstico, mantenimiento y reparación de electrodomésticos en Bogotá y alrededores.',
